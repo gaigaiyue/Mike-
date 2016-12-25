@@ -12,7 +12,7 @@ before_action :find_group_and_check_permission, only: [:edit, :update, :destroy]
    def show
      @group = Group.find(params[:id])
    end
-   
+
   def create
    @group = Group.new(group_params)
    @group.user = current_user
@@ -54,3 +54,4 @@ end
  def group_params
    params.require(:group).permit(:title, :description)
  end
+end
